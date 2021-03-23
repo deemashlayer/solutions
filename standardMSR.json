@@ -1,0 +1,44 @@
+{
+	"packages": [
+		"package": {
+			"name": "WmRoot",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmPublic",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmAdmin",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmConsul",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmDB",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmJSONAPI",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmMobileSupport",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmParquet",
+			"version": "^10.5"
+		},
+		"package": {
+			"name": "WmTomcat",
+			"version": "^10.5"
+		},
+		"MyPkg": {
+			"name": "WmTomcat",
+			"version": "10.5"
+		}
+	]
+}
