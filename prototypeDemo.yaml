@@ -6,46 +6,30 @@ info:
   tags:
   - demo
   - coucou
-resources: # Identify source code repositories
-  - repo:
-    - name: "mygit"
-    - location: "https://github.com/johnpcarter/wm.git"
-services: # generated packages representing services referenced from a workflow
-  - service:
-    - name: "MyClientPackage.testfolder.test:SAPGetClientInfo"
-    - repo: "git:mygit"
+packages: # generated packages representing services referenced from a workflow
+  - package:
     - packageName: "MyClientPackage"
     - version: "1.0.1"
-    - depends: # subset of dependent packages as defined by scaffold, required only by this tenant
-      - package:
-        - repo: "wpm:sag"
-        - name: "WmFlatFile"
-        - version: "10.11^"
-      - package:
-        - repo: "git:mygit"
-        - name: "MyUtilities"
-        - version: "1.0.0^"
-      - jdbcConnection:
-        - name: "NeedfulConnection"
-        - url: {?CONNECTION_1_URL}
-        - username: {?CONNECTION_1_USERNAME}
-        - password: {?CONNECTION_1_PW}
-      - jdbcConnection:
-        - repo: "git:mygit"
-        - name: "JDBCConnectionInGit"
-properties:
-  - property:
-    - name: CONNECTION_1_URL
-    - default: "some URL"
-    - modifiable: true
-    - secret: false
-  - property:
-    - name: CONNECTION_1_USERNAME
-    - default: "user"
-    - modifiable: true
-    - secret: false
-  - property:
-    - name: CONNECTION_1_PW
-    - default: "{AES}....."
-    - modifiable: true
-    - secret: true
+  - package:
+    - packageName: "MyTestPackage"
+    - version: "3.1"
+depends: # subset of dependent packages as defined by scaffold, required only by this tenant
+  - package:
+    - name: "WmFlatFile"
+    - version: "10.11^"
+  - package:
+    - name: "MyUtilities"
+    - version: "1.0.0^"
+configurations:
+  - jdbcConnection:
+    - name: "NeedfulConnection"
+    - url: {?CONNECTION_1_URL}
+    - username: {?CONNECTION_1_USERNAME}
+    - password: {?CONNECTION_1_PW}
+  - user:
+    - name: "client_01"
+    - password: {?USER_1_PW}
+libraries:
+  - file:
+    - source: "./library/resources/mysql-connector-java-5.1.47.jar"
+    - target: "/IntegrationServer/lib/jars"
