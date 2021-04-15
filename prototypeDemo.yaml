@@ -16,10 +16,10 @@ packages: # generated packages representing services referenced from a workflow
 depends: # subset of dependent packages as defined by scaffold, required only by this tenant
   - package:
     - name: "WmFlatFile"
-    - version: "10.11^"
+    - version: "10.11"
   - package:
     - name: "MyUtilities"
-    - version: "1.0.0^"
+    - version: "1.0.0"
 configurations:
   - jdbcConnection:
     - name: "NeedfulConnection"
