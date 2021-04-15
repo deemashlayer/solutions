@@ -19,7 +19,7 @@ depends: # subset of dependent packages as defined by scaffold, required only by
     - version: "10.11"
   - package:
     - name: "MyUtilities"
-    - version: "1.0.0"
+    - version: "1.0.1"
 configurations:
   - jdbcConnection:
     - name: "NeedfulConnection"
