@@ -1,0 +1,52 @@
+name: a1manifest
+version: "1.0.0"
+model: agent-manifest
+tags: 
+  - demo
+  - coucou
+repositories:
+  - repository:
+    - name: "Custom Packages"
+    - location: "https://github.com/customerName/repo1"
+    - key: "deployment readonly key"
+  - repository:
+    - name: "Other resources"
+    - location: "https://github.com/customerName/resourcesRepo"
+    - key: "deployment readonly key"
+packages:
+  - package:
+    - repo: "Custom Packages"
+    - name: "CommonUtils"
+    - version: "1.0"
+  - package:
+    - repo: "Other Resources"
+    - name: "InvoiceProcessing"
+    - version: "2.1"
+  - package:
+    - repo: "Custom Packages"
+    - name: "SupportPkg"
+    - version: "1.0"
+  - package:
+    - repo: "Other Resources"
+    - name: "WmSAP"
+    - version: "10.7.5"
+configurations:
+  - configuration:
+    - name: "Name1"
+    - property1: value1
+    - property2: value2
+    - propertyN: valueN
+  - configuration:
+    - name: "Name2"
+    - property1: $env{val1}
+    - property2: $env{val2}
+    - propertyN: $env{valN}
+libraries:
+  - library:
+    - repo: "Custom Packages"
+    - source: "/libraries/resources/mysql-connector-java-5.1.47.jar"
+    - target: "/IntegrationServer/lib/jars"
+dynamicVariables:
+  - var1: value1
+  - var2: value2
+  - var3: $env{dvvar3}
